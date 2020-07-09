@@ -1,0 +1,4 @@
+FROM edbizarro/gitlab-ci-pipeline-php:7.4-alpine
+
+USER root
+RUN docker-php-ext-install sockets
