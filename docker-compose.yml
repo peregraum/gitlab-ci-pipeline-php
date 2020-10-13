@@ -26,3 +26,11 @@ services:
       context: .
       dockerfile: ./Dockerfile-7.4-pcov
     tty: true
+
+  php73PCOV:
+    image: peregraum/gitlab-ci-pipeline-php:7.3-alpine-pcov-noxdebug
+    container_name: pipeline-php73-pcov
+    build:
+      context: .
+      dockerfile: ./Dockerfile-7.3-pcov
+    tty: true
