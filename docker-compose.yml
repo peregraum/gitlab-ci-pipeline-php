@@ -1,10 +1,28 @@
 version: '3'
 
 services:
-  testing:
-    container_name: testing
+  php73:
+    image: peregraum/gitlab-ci-pipeline-php:7.3-alpine
+    container_name: pipeline-php73
     build:
       context: .
       dockerfile: ./Dockerfile
     tty: true
     stdin_open: true
+
+  php74:
+    image: peregraum/gitlab-ci-pipeline-php:7.4-alpine
+    container_name: pipeline-php74
+    build:
+      context: .
+      dockerfile: ./Dockerfile-7.4
+    tty: true
+    stdin_open: true
+
+  php74PCOV:
+    image: peregraum/gitlab-ci-pipeline-php:7.4-alpine-pcov-noxdebug2
+    container_name: pipeline-php74-pcov
+    build:
+      context: .
+      dockerfile: ./Dockerfile-7.4-pcov
+    tty: true
