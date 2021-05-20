@@ -1,7 +1,7 @@
 FROM edbizarro/gitlab-ci-pipeline-php:7.4-alpine
 
 USER root
-RUN docker-php-ext-install sockets
+RUN docker-php-ext-install sockets sysvsem
 
 # Disable XDebug
 RUN rm -rf /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
